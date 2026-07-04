@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eplsilon Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f8ff;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #38bdf8);
+      color: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #fde047;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #fde047;
+    }
+
+    .btn-nav {
+      background: #fde047;
+      color: #111827;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-nav:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(30,58,138,0.95), rgba(37,99,235,0.88)),
+                  url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80') center/cover;
+      color: white;
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+      color: #e5f0ff;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #fde047;
+      color: #111827;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #1e3a8a;
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      color: #fde047;
+    }
+
+    .hero-card ul li {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    .hero-card ul li::before {
+      content: "✓";
+      color: #fde047;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* Section titles */
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 2.2rem;
+      color: #1e3a8a;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+      color: #6b7280;
+      font-size: 1rem;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+      text-align: center;
+      transition: 0.3s ease;
+      border-top: 5px solid #2563eb;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature-icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      color: #1e40af;
+      font-weight: 700;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: #111827;
+      font-size: 1.15rem;
+    }
+
+    .feature-card p {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    /* Levels */
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .level-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .level-header {
+      padding: 22px;
+      color: white;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .college {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .lycee {
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+    }
+
+    .bac2 {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    }
+
+    .level-body {
+      padding: 22px;
+    }
+
+    .level-body ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eef2f7;
+      color: #374151;
+    }
+
+    .level-body ul li:last-child {
+      border-bottom: none;
+    }
+
+    /* Specialities */
+    .specialities {
+      background: linear-gradient(to right, #eff6ff, #f8fbff);
+    }
+
+    .speciality-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .speciality-item {
+      background: white;
+      padding: 18px 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+      border-left: 6px solid #2563eb;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .speciality-item:hover {
+      transform: translateX(6px);
+      background: #f9fbff;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6, #0ea5e9);
+      color: white;
+      text-align: center;
+      border-radius: 25px;
+      padding: 55px 30px;
+      box-shadow: 0 20px 40px rgba(37,99,235,0.25);
+    }
+
+    .cta h2 {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      color: #eaf3ff;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #d1d5db;
+      padding: 50px 0 20px;
+      margin-top: 70px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: #fde047;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.92rem;
+      color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-content,
+      .features-grid,
+      .levels-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .speciality-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 5%;
+        background: white;
+        color: #1f2937;
+        flex-direction: column;
+        width: 230px;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-content,
+      .features-grid,
+      .levels-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Epsilon<span>Academy</div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#accueil">Accueil</a>
+        <a href="#niveaux">Niveaux</a>
+        <a href="#specialites">Spécialités</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="btn-nav">S'inscrire</a>
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="accueil">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>La plateforme Epsilon de mathématiques pour réussir du collège au Bac</h1>
+        <p>
+          Une plateforme académique moderne dédiée aux élèves marocains.
+          Accédez à des cours clairs, des exercices corrigés, des examens,
+          des fiches de révision et un accompagnement complet en mathématiques.
+        </p>
+        <div class="hero-buttons">
+          <a href="#niveaux" class="btn-primary">Choisir mon niveau</a>
+          <a href="#services" class="btn-secondary">Découvrir les services</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Pourquoi choisir Epsilon Academy ?</h3>
+        <ul>
+          <li>Programme 100% adapté au système marocain</li>
+          <li>Cours organisés par niveau et spécialité</li>
+          <li>Exercices corrigés et examens nationaux</li>
+          <li>Design attractif pour motiver les élèves</li>
+          <li>Apprentissage simple, moderne et efficace</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Nos services pédagogiques</h2>
+      <p class="section-subtitle">
+        Une expérience complète pour apprendre, s’entraîner et réussir en mathématiques.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📘</div>
+          <h3>Cours détaillés</h3>
+          <p>Des leçons bien expliquées, adaptées au niveau des élèves marocains.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">✍️</div>
+          <h3>Exercices corrigés</h3>
+          <p>Des exercices progressifs avec correction pour mieux comprendre les méthodes.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Examens & contrôles</h3>
+          <p>Préparation aux devoirs, examens régionaux et nationaux avec sujets corrigés.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Suivi de progression</h3>
+          <p>Un espace élève pour suivre les résultats, les chapitres étudiés et les progrès.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Levels -->
+  <section id="niveaux">
+    <div class="container">
+      <h2 class="section-title">Choisissez votre niveau scolaire</h2>
+      <p class="section-subtitle">
+        La plateforme couvre tous les niveaux du collège et du lycée marocain.
+      </p>
+
+      <div class="levels-grid">
+        <div class="level-card">
+          <div class="level-header college">Collège</div>
+          <div class="level-body">
+            <ul>
+              <li>1ère année collège</li>
+              <li>2ème année collège</li>
+              <li>3ème année collège</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="level-card">
+          <div class="level-header lycee">Lycée</div>
+          <div class="level-body">
+            <ul>
+              <li>Tronc commun scientifique</li>
+              <li>Tronc commun technologique</li>
+              <li>1ère année Bac</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="level-card">
+          <div class="level-header bac2">2ème année Bac</div>
+          <div class="level-body">
+            <ul>
+              <li>Accès par spécialité</li>
+              <li>Préparation examen national</li>
+              <li>Révisions intensives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialities -->
+  <section class="specialities" id="specialites">
+    <div class="container">
+      <h2 class="section-title">Spécialités disponibles en 2ème Bac</h2>
+      <p class="section-subtitle">
+        Un contenu spécifique selon chaque filière pour mieux accompagner les élèves.
+      </p>
+
+      <div class="speciality-grid">
+        <div class="speciality-item">Sciences Mathématiques A</div>
+        <div class="speciality-item">Sciences Mathématiques B</div>
+        <div class="speciality-item">Sciences Physiques</div>
+        <div class="speciality-item">Sciences de la Vie et de la Terre</div>
+        <div class="speciality-item">Sciences Économiques</div>
+        <div class="speciality-item">Sciences de Gestion Comptable</div>
+        <div class="speciality-item">Sciences et Technologies Électriques</div>
+        <div class="speciality-item">Sciences et Technologies Mécaniques</div>
+        <div class="speciality-item">Lettres</div>
+        <div class="speciality-item">Sciences Humaines</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>Commencez votre réussite dès aujourd’hui</h2>
+        <p>
+          Rejoignez une plateforme moderne, claire et motivante pour apprendre les mathématiques
+          avec confiance, du collège jusqu’au Bac.
+        </p>
+        <a href="#" class="btn-primary">Créer un compte gratuitement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>MathMaroc Academy</h3>
+          <p>
+            Plateforme académique professionnelle dédiée aux élèves marocains du collège et du lycée,
+            spécialisée en mathématiques.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Niveaux</h3>
+          <a href="#">Collège</a>
+          <a href="#">Lycée</a>
+          <a href="#">1ère Bac</a>
+          <a href="#">2ème Bac</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Ressources</h3>
+          <a href="#">Cours</a>
+          <a href="#">Exercices</a>
+          <a href="#">Examens</a>
+          <a href="#">Fiches</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <a href="mailto:mathlahcen8@gmail.com">mathlahcen8@gmail.com</a>
+          <a href="#">Fès - Maroc</a>
+          <a href="#">+212 6 00 00 00 00</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Epsilon Academy - Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
