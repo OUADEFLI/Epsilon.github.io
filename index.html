@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eplsilon Academy</title>
+  <title>Epsilon Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -323,17 +323,90 @@
 
     .speciality-item {
       background: white;
-      padding: 18px 20px;
       border-radius: 14px;
       box-shadow: 0 8px 18px rgba(0,0,0,0.06);
       border-left: 6px solid #2563eb;
       font-weight: 500;
       transition: 0.3s;
+      overflow: hidden;
     }
 
     .speciality-item:hover {
       transform: translateX(6px);
       background: #f9fbff;
+    }
+
+    .speciality-title {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 18px 20px;
+      color: #1f2937;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .speciality-title::after {
+      content: "+";
+      background: #2563eb;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+
+    .speciality-item.active .speciality-title::after {
+      content: "−";
+      background: #ef4444;
+    }
+
+    .resource-links {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 0 18px 18px;
+    }
+
+    .speciality-item.active .resource-links {
+      display: grid;
+    }
+
+    .resource-links a {
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-align: center;
+      transition: 0.3s;
+      border: 1px solid #dbeafe;
+    }
+
+    .resource-links a:hover {
+      background: #dbeafe;
+      transform: translateY(-2px);
+    }
+
+    .level-link {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .level-link:hover {
+      color: #1e3a8a;
     }
 
     /* CTA */
@@ -458,7 +531,7 @@
   <!-- Header -->
   <header>
     <div class="container navbar">
-      <div class="logo">Epsilon<span>Academy</div>
+      <div class="logo">Epsilon<span>Academy</span></div>
 
       <nav class="nav-links" id="navLinks">
         <a href="#accueil">Accueil</a>
@@ -573,7 +646,7 @@
           <div class="level-header bac2">2ème année Bac</div>
           <div class="level-body">
             <ul>
-              <li>Accès par spécialité</li>
+              <li><a href="#specialites" class="level-link">Accès par spécialité</a></li>
               <li>Préparation examen national</li>
               <li>Révisions intensives</li>
             </ul>
@@ -588,20 +661,111 @@
     <div class="container">
       <h2 class="section-title">Spécialités disponibles en 2ème Bac</h2>
       <p class="section-subtitle">
-        Un contenu spécifique selon chaque filière pour mieux accompagner les élèves.
+        Cliquez sur une spécialité pour afficher : Cours, Exercices, Devoirs et Examens Nationaux.
       </p>
 
       <div class="speciality-grid">
-        <div class="speciality-item">Sciences Mathématiques A</div>
-        <div class="speciality-item">Sciences Mathématiques B</div>
-        <div class="speciality-item">Sciences Physiques</div>
-        <div class="speciality-item">Sciences de la Vie et de la Terre</div>
-        <div class="speciality-item">Sciences Économiques</div>
-        <div class="speciality-item">Sciences de Gestion Comptable</div>
-        <div class="speciality-item">Sciences et Technologies Électriques</div>
-        <div class="speciality-item">Sciences et Technologies Mécaniques</div>
-        <div class="speciality-item">Lettres</div>
-        <div class="speciality-item">Sciences Humaines</div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences Mathématiques A</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences Mathématiques B</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences Physiques</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences de la Vie et de la Terre</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences Économiques</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences de Gestion Comptable</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences et Technologies Électriques</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences et Technologies Mécaniques</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Lettres</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
+        <div class="speciality-item">
+          <button class="speciality-title">Sciences Humaines</button>
+          <div class="resource-links">
+            <a href="#">Cours</a>
+            <a href="#">Exercices</a>
+            <a href="#">Devoirs</a>
+            <a href="#">Examens Nationaux</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -668,6 +832,15 @@
 
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+    });
+
+    const specialityButtons = document.querySelectorAll('.speciality-title');
+
+    specialityButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const card = button.parentElement;
+        card.classList.toggle('active');
+      });
     });
   </script>
 
